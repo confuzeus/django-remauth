@@ -21,7 +21,7 @@ class LoginTokenView(APIView):
 
     def post(self, request):
         serializer = RemoteUserSerializer(data=request.data)
-        log.info(f"Attempt to generate login token. User: {serializer.data['email']}")
+        log.info(f"Attempt to generate login token. User: {serializer.initial_data['email']}")
         if serializer.is_valid():
             token = secrets.token_urlsafe(40)
             cache.set(
@@ -32,7 +32,7 @@ class LoginTokenView(APIView):
 
             return Response({"token": token}, status=status.HTTP_202_ACCEPTED)
 
-        log.error(f'Failed to generate login token. Invalid serializer. User: {serializer.data["email"]}')
+        log.error(f'Failed to generate login token. Invalid serializer. User: {serializer.initial_data["email"]}')
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
