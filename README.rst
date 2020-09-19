@@ -1,6 +1,6 @@
-===
+=======
 remauth
-===
+=======
 
 Login to a Django website remotely.
 
