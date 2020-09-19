@@ -39,7 +39,7 @@ Quick start
 
 6. POST to https://yourwebsite.io/your-path/api/generate/ to generate a login token.
 
-The POST request must contain an object with a key 'email' that corresponds to the email address of a valid user.
+The POST request must contain an object with a key 'email' that contains a value corresponding to the email address of a valid user.
 
 The response will be an object:
 
