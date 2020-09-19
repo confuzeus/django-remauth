@@ -39,16 +39,17 @@ Quick start
 
 6. POST to https://yourwebsite.io/your-path/api/generate/ to generate a login token.
 
-The POST request must contain an object with a key 'email' that contains a value corresponding to the email address of a valid user.
+    The POST request must contain an object with a key 'email' that contains a value corresponding to the email address of a valid user.
 
-The response will be an object:
+    The response will be an object:
 
     {"token": token}
 
 7. Visit https://yourwebsite.io/your-path/verify/email@example.com/the-token-previously-generated/ to login.
 
-This will redirect to REMAUTH_SUCCESS_URL if successful.
+    This will redirect to REMAUTH_SUCCESS_URL if successful.
 
 8. You can fetch arbritary data from your website remotely by GETing https://yourwebsite.io/your-path/details/
 
-Populate REMAUTH_GET_DATA first.
+    Populate REMAUTH_GET_DATA first.
+    
